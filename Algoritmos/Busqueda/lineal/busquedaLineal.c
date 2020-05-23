@@ -20,7 +20,7 @@ int busquedaLineal(int arr[],int busqueda,int longitud){
 int main(){
 	// O(n)
 	int edades[] = {23,25,10,2,55};
-	int busqueda = 1;
+	int busqueda = 10;
 	// sizeof devuelve el tamaño en bytes
 	int longitud = sizeof edades / sizeof edades[0];
 	int existe = busquedaLineal(edades, busqueda, longitud);
