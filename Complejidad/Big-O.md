@@ -1,6 +1,6 @@
-#Complejidad algoritmica
+# Complejidad algoritmica
 
-##Notación Big-O
+## Notación Big-O
 
 La razón de crecimiento de un algoritmo (de una función matemática) es dominada por el término más grande de la función, eso implica que los otros términos pueden ser despreciados.
 
@@ -14,7 +14,7 @@ De manera creciente, la clasificación de la categoría de complejidad de notaci
 
 ![img2](https://images.squarespace-cdn.com/content/51e97622e4b001fd0a6bba71/1521928168525-QM8F87Q76TVYKLO33A0N/Big%2BO%2BNotation%2BSummary.jpg?content-type=image%2Fjpeg)
 
-##Tiempos de ejecución por categoría
+## Tiempos de ejecución por categoría
 
 ![img3](imagenes/runtime.png)
 
