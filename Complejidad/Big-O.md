@@ -78,6 +78,8 @@ b = tamaño de cada subproblema. Se asumen todos los subproblemas tener el mismo
 f(n) = costo del trabajo realizado fuera de la llamada recursiva, que incluye el costo de dividir el problema y costo de fusionar las soluciones
 
 Aqui. a >= 1 y b > 1 son constantes, y f(n) es una función asintóticamente positiva.
+
+Si f(n) = O( n^log_b(a) ), entonces T(n) = O( n^log_b (a) * log n )
 ```
 
 **Ejemplo**
@@ -89,7 +91,7 @@ a = 3
 n/b = n/2
 f(n) = n
 
-log_2 (2) = 1
+log_2 (2) = 1 = n
 T(n) = O(n log n)
 ```
 
@@ -181,3 +183,8 @@ def potenciasDe2(n):
     return curr
 ```
 Tiene un tiempo de ejecución de O(log n)
+
+## Referenacias
+* Master Theorem (With Examples). (2020). Programiz. https://www.programiz.com/dsa/master-theorem
+* McDowell, G. L. (2015). Cracking the Coding Interview: 189 Programming Questions and Solutions (189 Preguntas y soluciones de programación) (6th ed.). Careercup.
+* Solución de problemas con algoritmos y estructuras de datos usando Python — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/index.html
