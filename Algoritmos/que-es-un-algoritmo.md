@@ -39,3 +39,8 @@ Paso 4: si a > b
             Mostrar c es el número más grande.
 Paso 5: Detenerse.   
 ```
+
+## Referencias 
+
+* Muñoz, J. D. (2021, 21 mayo). Diseño de algoritmos. PLEDIN 3.0. https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u03/
+* What is an Algorithm? (2020). Programiz. https://www.programiz.com/dsa/algorithm
