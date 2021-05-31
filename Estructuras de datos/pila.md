@@ -21,7 +21,7 @@ Una pila es un objeto (un tipo de datos abstracto - TAD) que permite las siguien
 
 Las operaciones de push y pop toman un tiempo constante, es decir O(1).
 
-## Implementación en Python de una pila
+## Análisis de complejidad
 
 ```python
 class Pila:
