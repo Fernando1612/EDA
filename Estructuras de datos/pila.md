@@ -17,11 +17,11 @@ Una pila es un objeto (un tipo de datos abstracto - TAD) que permite las siguien
 * **Size** :  devuelve el número de elementos en la pila
 * **Peek** : obtiene el valor del elemento superior sin eliminarlo
 
-## Complejidad del tiempo de la pila
+## Análisis de complejidad
 
 Las operaciones de push y pop toman un tiempo constante, es decir O(1).
 
-## Análisis de complejidad
+## Implementación de una pila en python
 
 ```python
 class Pila:
