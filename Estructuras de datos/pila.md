@@ -43,3 +43,7 @@ class Pila:
   def size(self):
     return len(self.datos)
 ```
+
+## Referencias
+* 3.5. Implementación de una pila en Python — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/BasicDS/ImplementacionDeUnaPilaEnPython.html
+* Stack Data Structure and Implementation in Python, Java and C/C++. (2020). Programiz. https://www.programiz.com/dsa/stack
