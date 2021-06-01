@@ -55,6 +55,5 @@ circular (en anillo) tanto en dirección directa (“adelante”) como inversa (
 - Anula(L)      
   - Vacía la lista L.
 
-Estas operaciones son las básicas para manejar listas. En realidad, la decisión de qué ope-
-raciones son las básicas depende de las características de la aplicación que se va a realizar con
+Estas operaciones son las básicas para manejar listas. En realidad, la decisión de qué operaciones son las básicas depende de las características de la aplicación que se va a realizar con
 los datos de la lista.
