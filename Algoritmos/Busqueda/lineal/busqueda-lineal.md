@@ -1,1 +1,1 @@
-# Búsqueda linead
+# Búsqueda lineal
