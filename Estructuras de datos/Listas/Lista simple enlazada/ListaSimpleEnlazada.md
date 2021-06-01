@@ -153,7 +153,136 @@ El orden es típicamente ascendente o descendente y asumimos que los datos de la
 
 ![orderlinkedlist](https://user-images.githubusercontent.com/42527034/120277821-28b9dc80-c27a-11eb-8344-23b36bc09c39.png)
 
+### Operaciones básicas
+
+* **Add** : agrega un nuevo ítem a la lista, asegurando que el orden se preserve
+* **Remove** : elimina el ítem de la lista
+* **Search** : busca el ítem en la lista
+* **isEmpty** : comprueba si la lista está vacía
+* **Size** : devuelve el número de ítems en la lista
+* **Index** : devuelve la posición del ítem en la lista
+* **Pop** : elimina y el último dato de la lista
+
+### Implementación de una lista enlazada simple ordenada en python
+
+```python
+class Nodo:
+    def __init__(self,datoInicial):
+        self.dato = datoInicial
+        self.siguiente = None
+
+    def getData(self):
+        return self.dato
+
+    def getNext(self):
+        return self.siguiente
+
+    def setData(self,nuevodato):
+        self.dato = nuevodato
+
+    def setNext(self,nuevosiguiente):
+        self.siguiente = nuevosiguiente
+
+
+class OrderedLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def add(self,dato):
+        actual = self.head
+        previo = None
+        detenerse = False
+        while actual != None and not detenerse:
+            if actual.getData() > dato:
+                detenerse = True
+            else:
+                previo = actual
+                actual = actual.getNext()
+
+        temp = Nodo(dato)
+        if previo == None:
+            temp.setNext(self.head)
+            self.head = temp
+        else:
+            temp.setNext(actual)
+            previo.setNext(temp)
+
+    def search(self,dato):
+        actual = self.head
+        encontrado = False
+        detenerse = False
+        while actual != None and not encontrado and not detenerse:
+            if actual.getData() == dato:
+                encontrado = True
+            else:
+                if actual.getData() > dato:
+                    detenerse = True
+                else:
+                    actual = actual.getNext()
+
+        return encontrado
+
+    def isEmpty(self):
+        return self.head == None
+
+    def size(self):
+        actual = self.head
+        contador = 0
+        while actual != None:
+            contador += 1
+            actual = actual.getNext()
+
+        return contador
+    
+    """ remove, index, pop """
+
+    def remove(self, dato):
+        actual = self.head
+        encontrado = False
+        while actual != None and not encontrado:
+            if actual.getData() == dato:
+                encontrado = True
+            else:
+              prev = actual
+              actual = actual.getNext()
+        if prev == None:
+          self.head = actual.getNext()
+        else:
+          prev.setNext(actual.getNext())
+      
+    def index(self, dato):
+        actual = self.head
+        encontrado = False
+        #contador = 0
+        contador = 1
+        while actual != None and not encontrado:
+            if actual.getData() == dato:
+                encontrado = True
+                return contador
+            else:
+              contador += 1
+              actual = actual.getNext()
+        return    
+      
+    def pop(self):
+      actual = self.head
+      prev = None
+      while actual.getNext() != None:
+        prev = actual
+        actual = actual.getNext()
+
+      if prev == None:
+        self.head = actual.getNext()
+      else:
+        prev.setNext(actual.getNext())
+```
+
+## Análisis de complejidad
+
+El método **isEmpty** es O(1) ya que requiere un paso para comprobar si la referencia de la cabeza es None. **size**, por otro lado, siempre requerirá n pasos ya que no hay forma de saber cuántos nodos hay en la lista enlazada sin recorrerla desde la cabeza hasta el final. Por lo tanto, **size** es O(n). Agregar un dato a una lista no ordenada siempre será O(1) ya que simplemente colocamos el nuevo nodo en la cabeza de la lista enlazada. Sin embargo, **search** y **remove** , así como **add** para una lista ordenada, requieren el proceso de recorrido. Aunque en promedio pueden necesitar recorrer sólo la mitad de los nodos, estos métodos son todos O(n) ya que en el peor de los casos procesarán cada nodo de la lista.
+
 ## Referencias
 
 * 3.21. Implementación de una lista no ordenada: Listas enlazadas — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/BasicDS/ImplementacionDeUnaListaNoOrdenadaListasEnlazadas.html
+* 3.23. Implementación de una lista ordenada — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/BasicDS/ImplementacionDeUnaListaOrdenada.html
 * Linked List Operations: Traverse, Insert and Delete. (2020). Programiz. https://www.programiz.com/dsa/linked-list-operations
