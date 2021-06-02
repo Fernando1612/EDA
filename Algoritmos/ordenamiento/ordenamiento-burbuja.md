@@ -10,8 +10,8 @@ Para analizar el ordenamiento burbuja, debemos tener en cuenta que independiente
 
 ### Complejidad en el tiempo
 * **Peor caso** : si queremos ordenar en orden ascendente y la lista está en orden descendente, entonces ocurre el peor de los casos. O(n^2)
-* **Mejor caso** : si la matriz ya está ordenada, no hay necesidad de ordenarla. O(n)
-* **Caso promedio** : ocurre cuando los elementos de la matriz están en orden desordenado (ni ascendente ni descendente). O(n^2)
+* **Mejor caso** : si la lista ya está ordenada, no hay necesidad de ordenarla. O(n)
+* **Caso promedio** : ocurre cuando los elementos de la lista están en orden desordenado (ni ascendente ni descendente). O(n^2)
 
 ### Complejidad de espacio
 * La complejidad del espacio se O(1) ya que se debe utilizar una variable adicional para el intercambio.
