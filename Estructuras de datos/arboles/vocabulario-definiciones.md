@@ -48,6 +48,43 @@ El nivel de un nodo n es el número de aristas en la ruta desde el nodo raíz ha
 **Altura**
 La altura de un árbol es igual al máximo nivel de cualquier nodo en el árbol.
 
+## Recorridos de árboles
+
+Hay tres patrones de uso común para visitar todos los nodos de un árbol. La diferencia entre estos patrones es el orden en que es visitado cada nodo. Llamamos a estas visitas de los nodos un “recorrido”. Los tres recorridos se llaman **preorden**, **inorden** y **postorden**. 
+
+**preorden**
+En un recorrido en preorden, visitamos primero el nodo raíz, luego recursivamente realizamos un recorrido en preorden del subárbol izquierdo, seguido de un recorrido recursivo en preorden del subárbol derecho.
+
+```python
+def preorden(arbol):
+  if arbol:
+    print(arbol.raiz())
+    preorden(arbol.hijoIzquierdo())
+    preorden(arbol.hijoDerecho())
+```
+
+**inorden**
+En un recorrido en inorden, realizamos recursivamente un recorrido en inorden en el subárbol izquierdo, visitamos el nodo raíz, y finalmente hacemos un recorrido recursivo en inorden del subárbol derecho.
+
+```python
+def inorden(arbol):
+  if arbol:
+    inorden(arbol.hijoIzquierdo())
+    print(arbol.raiz())
+    inorden(arbol.hijoDerecho())
+```
+
+**postorden**
+En un recorrido en postorden, realizamos recursivamente recorridos en postorden del subárbol izquierdo y del subárbol derecho seguidos de una visita al nodo raíz
+
+```python
+def postorden(arbol):
+  if arbol:
+    postorden(arbol.hijoIzquierdo())
+    postorden(arbol.hijoDerecho())
+    print(arbol.raiz()
+```
+
 ## Referencias
 
 * Tree Data Structure. (2020). Programiz. https://www.programiz.com/dsa/trees
