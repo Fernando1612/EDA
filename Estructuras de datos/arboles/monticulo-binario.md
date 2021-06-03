@@ -33,10 +33,143 @@ Anadir un nuevo dato:
 * **Mejor caso** : O(1)
 * **Peor caso** : O(log n)
 
-##Implementación de una pila en python
+## Implementación del montículo binario en python (Max heap)
 
 ```python
+class MonticuloBinario:
+  def __init__(self):
+    self.listaMonticulo = [0]
+    self.tamanoActual = 0
+
+  def insert(self, k):
+    self.listaMonticulo.append(k)
+    self.tamanoActual = self.tamanoActual + 1
+    self.infiltArriba(self.tamanoActual)
+
+  def getMax(self):
+    if self.tamanoActual >= 1:
+      return self.listaMonticulo[1]
+    else:
+      return None
+
+  def deleteMax(self):
+    valorSacado = self.listaMonticulo[1]
+    self.listaMonticulo[1] = self.listaMonticulo[self.tamanoActual]
+    self.tamanoActual = self.tamanoActual - 1 
+    self.listaMonticulo.pop()
+    self.infiltAbajo(1)
+    return valorSacado
+
+  def isEmpty(self):
+    return self.tamanoActual == 0
+
+  def size(self):
+    return self.tamanoActual
+
+  def heapify(self, lista):
+    i = len(lista) // 2
+    self.tamanoActual = len(lista)
+    self.listaMonticulo = [0] + lista[:]
+    while i > 0:
+      self.infiltAbajo(i)
+      i = i - 1
+
+  def infiltArriba(self, i):
+    while i // 2 > 0:
+      if self.listaMonticulo[i] > self.listaMonticulo[i // 2]:
+        temp = self.listaMonticulo[i // 2]
+        self.listaMonticulo[i // 2] = self.listaMonticulo[i]
+        self.listaMonticulo[i] = temp
+      i = i // 2
+  
+  def infiltAbajo(self, i):
+    while (i * 2) <= self.tamanoActual:
+      hm = self.hijoMax(i)
+      if self.listaMonticulo[i] < self.listaMonticulo[hm]:
+        temp = self.listaMonticulo[i]
+        self.listaMonticulo[i] = self.listaMonticulo[hm]
+        self.listaMonticulo[hm] = temp
+      i = hm 
+  
+  def hijoMax(self, i):
+    if i * 2 + 1 > self.tamanoActual:
+      return i * 2
+    else:
+      if self.listaMonticulo[i * 2] > self.listaMonticulo[i * 2 + 1]:
+        return i * 2
+      else:
+        return i * 2 + 1
+```
+
+## Implementación del montículo binario en python (Min heap)
+
+```python
+class MonticuloBinario:
+  def __init__(self):
+    self.listaMonticulo = [0]
+    self.tamanoActual = 0
+
+  def insert(self, k):
+    self.listaMonticulo.append(k)
+    self.tamanoActual = self.tamanoActual + 1
+    self.infiltArriba(self.tamanoActual)
+
+  def getMin(self):
+    if self.tamanoActual >= 1:
+      return self.listaMonticulo[1]
+    else:
+      return None
+
+  def deleteMin(self):
+    valorSacado = self.listaMonticulo[1]
+    self.listaMonticulo[1] = self.listaMonticulo[self.tamanoActual]
+    self.tamanoActual = self.tamanoActual - 1 
+    self.listaMonticulo.pop()
+    self.infiltAbajo(1)
+    return valorSacado
+
+  def isEmpty(self):
+    return self.tamanoActual == 0
+
+  def size(self):
+    return self.tamanoActual
+
+  def heapify(self, lista):
+    i = len(lista) // 2
+    self.tamanoActual = len(lista)
+    self.listaMonticulo = [0] + lista[:]
+    while i > 0:
+      self.infiltAbajo(i)
+      i = i - 1
+
+  def infiltArriba(self, i):
+    while i // 2 > 0:
+      if self.listaMonticulo[i] < self.listaMonticulo[i // 2]:
+        temp = self.listaMonticulo[i // 2]
+        self.listaMonticulo[i // 2] = self.listaMonticulo[i]
+        self.listaMonticulo[i] = temp
+      i = i // 2
+  
+  def infiltAbajo(self, i):
+    while (i * 2) <= self.tamanoActual:
+      hm = self.hijoMin(i)
+      if self.listaMonticulo[i] > self.listaMonticulo[hm]:
+        temp = self.listaMonticulo[i]
+        self.listaMonticulo[i] = self.listaMonticulo[hm]
+        self.listaMonticulo[hm] = temp
+      i = hm 
+  
+  def hijoMin(self, i):
+    if i * 2 + 1 > self.tamanoActual:
+      return i * 2
+    else:
+      if self.listaMonticulo[i * 2] < self.listaMonticulo[i * 2 + 1]:
+        return i * 2
+      else:
+        return i * 2 + 1
 ```
 
 ## Referencias
 
+* Heap Data Structure. (2020). Programiz. https://www.programiz.com/dsa/heap-data-structure
+* 6.11. Implementación de un montículo binario — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/Trees/ImplementacionDeUnMonticuloBinario.html
