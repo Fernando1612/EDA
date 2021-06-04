@@ -15,7 +15,7 @@ Sus propiedades son:
 
 ## Operaciones básicas
 
-* **Put** : Agrega una nueva pareja clave-valor. Si la clave ya está en el vector asociativo, reemplaza el valor anterior por el nuevo.
+* **Put** : Agrega una nueva pareja clave-valor. Si la clave ya está en el árbol, reemplaza el valor anterior por el nuevo.
 * **Get** : Dada una clave, devuelva el valor almacenado o None de lo contrario.
 * **Delete** : Elimina un pareja clave-valor.
 * **Size** : Devuelve el número de parejas clave-valor almacenadas.
