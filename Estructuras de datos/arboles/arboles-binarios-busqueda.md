@@ -60,7 +60,7 @@ En el tercer caso, el nodo que se va a eliminar tiene dos hijos. En tal caso, si
 
 ## Análisis de complejidad
 
-* Complejidad en el tiempo
+### Complejidad en el tiempo
  * Get
     Peor caso : O(n)
     Mejor caso : O(log n)
@@ -76,7 +76,7 @@ En el tercer caso, el nodo que se va a eliminar tiene dos hijos. En tal caso, si
     Mejor caso : O(log n)
     Caso promedio : O(log n)
 
-* Complejidad de espacio
+### Complejidad de espacio
 La complejidad del espacio es de O(n).
 
 ## Implementación de un árbol de busqueda binaro en python
