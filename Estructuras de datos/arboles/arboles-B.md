@@ -30,3 +30,82 @@ Un árbol-B de orden M (el máximo número de hijos que puede tener cada nodo) e
 * **Get** : Dada una clave, devuelva True si la clave existe o False de lo contrario.
 * **Delete** : Elimina la clave.
 
+### Método Put
+
+La inserción de un elemento en un árbol B consta de dos eventos: buscar el nodo apropiado para insertar el elemento y dividir el nodo si es necesario. La operación de inserción siempre tiene lugar en el enfoque de abajo hacia arriba.
+
+* Realizando una búsqueda en el árbol, se halla el nodo hoja en el cual debería ubicarse el nuevo elemento.
+* Si el nodo hoja tiene menos elementos que el máximo número de elementos legales, entonces hay lugar para uno más. Inserte el nuevo elemento en el nodo, respetando el orden de los elementos.
+* De otra forma, el nodo debe ser dividido en dos nodos. La división se realiza de la siguiente manera:
+  * Se escoge el valor medio entre los elementos del nodo y el nuevo elemento.
+  * Los valores menores que el valor medio se colocan en el nuevo nodo izquierdo, y los valores mayores que el valor medio se colocan en el nuevo nodo derecho; el valor medio        actúa como valor separador.
+  * El valor separador se debe colocar en el nodo padre, lo que puede provocar que el padre sea dividido en dos, y así sucesivamente.
+
+<img width="718" alt="insertion" src="https://user-images.githubusercontent.com/42527034/120870192-e6d0b500-c55d-11eb-8132-d9f85fe298ff.png">
+
+### Método Get
+
+La búsqueda de un elemento en un árbol B es la forma generalizada de buscar un elemento en un árbol de búsqueda binaria. Se siguen los siguientes pasos.
+
+* Comenzando desde el nodo raíz, compare k con la primera clave del nodo.
+* Si k = primer clave del nodo, devuelve el nodo y el índice.
+* Si k.hoja = true, regresa NULO (es decir, no encontrado).
+* Si k < primer clave del nodo, busque el hijo izquierdo de esta clave de forma recursiva.
+* Si hay más de una clave en el nodo actual y k > primer clave del nodo, compare k con la siguiente clave en el nodo.
+* Si k < siguiente clave, busque el hijo izquierdo de esta clave (es decir, k se encuentra entre la primera y la segunda clave).
+* De lo contrario, busque el hijo correcto de la clave.
+* Repita los pasos 1 a 4 hasta alcanzar la hoja.
+
+### Método Delete
+
+La eliminación de un elemento en un árbol B consta de tres eventos principales: buscar el nodo donde existe la clave a eliminar , eliminar la clave y equilibrar el árbol si es necesario.
+
+Al eliminar un nodo de un árbol, puede ocurrir una condición llamada subdesbordamiento . El subdesbordamiento se produce cuando un nodo contiene menos de la cantidad mínima de claves que debería contener.
+
+* **Predecesor de orden** : 
+La clave más grande en el hijo izquierdo de un nodo se llama su predecesor de orden.
+* **Sucesor de orden** : 
+La clave más pequeña del hijo derecho de un nodo se denomina sucesora de orden.
+
+Hay tres casos principales para la operación de eliminación en un árbol B.
+
+#### Caso I
+
+La clave a eliminar está en la hoja. Hay dos casos para ello.
+
+* La eliminación de la clave no viola la propiedad del número mínimo de claves que debe tener un nodo y solo se elimina.
+
+<img width="588" alt="delete-leaf-1" src="https://user-images.githubusercontent.com/42527034/120877843-53f44280-c57e-11eb-8c51-a7f808c12fa7.png">
+
+* La eliminación de la clave viola la propiedad del número mínimo de claves que debe tener un nodo. En este caso, tomamos prestada una clave de su nodo hermano vecino inmediato   en el orden de izquierda a derecha.
+  Primero, visite al hermano izquierdo inmediato. Si el nodo hermano izquierdo tiene más de un número mínimo de claves, entonces tome prestada una clave de este nodo.
+  De lo contrario, marque para pedir prestado del nodo hermano derecho inmediato.
+  
+  <img width="588" alt="delete-leaf-2" src="https://user-images.githubusercontent.com/42527034/120877878-7be3a600-c57e-11eb-84f1-708c6eb9a2e9.png">
+  
+  Si ambos nodos hermanos inmediatos ya tienen un número mínimo de claves, fusionar el nodo con el nodo hermano izquierdo o el nodo hermano derecho. Esta fusión se realiza a       través del nodo padre.
+  
+  <img width="588" alt="delete-leaf-3" src="https://user-images.githubusercontent.com/42527034/120877885-89009500-c57e-11eb-9cc5-8a7e94d3c601.png">
+
+#### Caso II
+
+Si la clave a eliminar se encuentra en el nodo interno, ocurren los siguientes casos.
+
+* El nodo interno, que se elimina, se reemplaza por un predecesor en orden si el hijo izquierdo tiene más de la cantidad mínima de claves.
+
+<img width="588" alt="delete-internal-1" src="https://user-images.githubusercontent.com/42527034/120877801-20b1b380-c57e-11eb-8293-1b6291ae13b1.png">
+
+* El nodo interno, que se elimina, se reemplaza por un sucesor en orden si el hijo correcto tiene más de la cantidad mínima de claves.
+* Si alguno de los hijos tiene exactamente un número mínimo de llaves, combine los hijos izquierdo y derecho.
+
+<img width="588" alt="delete-internal-2" src="https://user-images.githubusercontent.com/42527034/120877812-2c9d7580-c57e-11eb-9ed3-6b1d545795b6.png">
+
+Después de fusionar, si el nodo padre tiene menos del número mínimo de claves, busque los hermanos como en el Caso I.
+
+#### Caso III
+
+En este caso, la altura del árbol se reduce. Si la clave de destino se encuentra en un nodo interno, y la eliminación de la clave conduce a un número menor de claves en el nodo (es decir, menos del mínimo requerido), busque el predecesor en orden y el sucesor en orden. Si ambos hijos contienen un número mínimo de llaves, no se podrá realizar el préstamo. Esto conduce al caso II (3), es decir, la fusión de los hijos.
+
+Nuevamente, busque al hermano para que le preste una llave. Pero, si el hermano también tiene solo un número mínimo de claves, combine el nodo con el hermano junto con el padre. Organice a los hijos en consecuencia (orden creciente).
+
+<img width="584" alt="delete-internal_3" src="https://user-images.githubusercontent.com/42527034/120877791-11326a80-c57e-11eb-9d8a-0ed9b45265c2.png">
