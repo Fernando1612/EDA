@@ -1,6 +1,6 @@
 # Búsqueda lineal (Linear Search)
 
-La **búsqueda lineal** es el algoritmo de búsqueda más simple que busca un elemento en una lista en orden secuencial. Comenzamos por un extremo y verificamos cada elemento hasta que no se encuentra el elemento deseado.
+La **búsqueda lineal** es el algoritmo de búsqueda más simple que busca un elemento en una lista en orden secuencial. Comenzamos por un extremo y verificamos cada elemento hasta que se encuentra el elemento deseado.
 
 ![seqsearch](https://user-images.githubusercontent.com/42527034/120405969-69176a00-c30f-11eb-9030-6c41c3383e74.png)
 
