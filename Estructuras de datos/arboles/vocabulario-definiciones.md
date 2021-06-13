@@ -16,36 +16,47 @@ Las diferentes estructuras de datos de árbol permiten un acceso más rápido y 
 ## Vocabulario y definiciones
 
 **Nodo**
+
 Un nodo es una parte fundamental de un árbol. Puede tener un nombre, que llamamos la “clave” y apunta a sus nodos secundarios. Un nodo también puede tener información adicional. Llamamos a esta información adicional la “carga útil”. Aunque la información de carga útil no es central para muchos algoritmos de árboles, a menudo es crítica en aplicaciones que usan árboles.
 
 **Arista**
+
 Una arista es otra parte fundamental de un árbol. Una arista conecta dos nodos para mostrar que hay una relación entre ellos. Cada nodo (excepto la raíz) está conectado por exactamente una arista entrante desde otro nodo. Cada nodo puede tener varias aristas salientes.
 
 **Raíz**
+
 La raíz del árbol es el único nodo en el árbol que no tiene aristas entrantes.
 
 **Ruta**
+
 Una ruta es una lista ordenada de nodos que están conectados por aristas. 
 
 **Hijos**
+
 El conjunto de h nodos que tienen aristas entrantes desde el mismo nodo se dice que son hijos de ese nodo.
 
 **Padre**
+
 Un nodo es el padre de todos los nodos con los que se conecta mediante aristas salientes.
 
 **Hermanos**
+
 Se dice que los nodos del árbol que son hijos del mismo padre son hermanos.
 
 **Subárbol**
+
 Un subárbol es un conjunto de nodos y aristas compuesto por un padre y todos los descendientes de ese padre.
 
 **Nodo hoja**
+
 Un nodo hoja es un nodo que no tiene hijos.
 
 **Nivel o profundidad**
+
 El nivel de un nodo n es el número de aristas en la ruta desde el nodo raíz hasta n. 
 
 **Altura**
+
 La altura de un árbol es igual al máximo nivel de cualquier nodo en el árbol.
 
 ## Recorridos de árboles
@@ -53,6 +64,7 @@ La altura de un árbol es igual al máximo nivel de cualquier nodo en el árbol.
 Hay tres patrones de uso común para visitar todos los nodos de un árbol. La diferencia entre estos patrones es el orden en que es visitado cada nodo. Llamamos a estas visitas de los nodos un “recorrido”. Los tres recorridos se llaman **preorden**, **inorden** y **postorden**. 
 
 **preorden**
+
 En un recorrido en preorden, visitamos primero el nodo raíz, luego recursivamente realizamos un recorrido en preorden del subárbol izquierdo, seguido de un recorrido recursivo en preorden del subárbol derecho.
 
 ```python
@@ -64,6 +76,7 @@ def preorden(arbol):
 ```
 
 **inorden**
+
 En un recorrido en inorden, realizamos recursivamente un recorrido en inorden en el subárbol izquierdo, visitamos el nodo raíz, y finalmente hacemos un recorrido recursivo en inorden del subárbol derecho.
 
 ```python
@@ -75,6 +88,7 @@ def inorden(arbol):
 ```
 
 **postorden**
+
 En un recorrido en postorden, realizamos recursivamente recorridos en postorden del subárbol izquierdo y del subárbol derecho seguidos de una visita al nodo raíz
 
 ```python
