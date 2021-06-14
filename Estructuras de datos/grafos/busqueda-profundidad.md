@@ -25,7 +25,7 @@ El algoritmo DFS funciona como sigue:
 
 ## Implementación del algoritmo de búsqueda por profundidad en python
 
-```pyhton
+```python
 def dfs(grafo, inicio, visitado = None, pila = None):
   if pila is None:
     pila = Pila()
