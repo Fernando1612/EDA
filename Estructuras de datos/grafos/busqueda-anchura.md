@@ -1,6 +1,6 @@
 # Búsqueda por anchura (Breadth first search)
 
-La búsqueda por anchura o BFS es un algoritmo recursivo para buscar todos los vértices de un grafo o estructura de datos de árbol.
+La búsqueda por anchura o BFS es un algoritmo para buscar todos los vértices de un grafo o estructura de datos de árbol.
 
 Una implementación estándar de BFS coloca cada vértice del grafo en una de dos categorías:
 
