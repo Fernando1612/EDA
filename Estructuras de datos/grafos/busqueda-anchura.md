@@ -25,4 +25,27 @@ El algoritmo funciona de la siguiente manera:
 
 ## Implementación del algoritmo de búsqueda por anchura en python
 
+```python
+def bfs(grafo, inicio):
+  cola = Cola()
+  visitado = set()
+  cola.enqueue(inicio)
+
+  while cola.size() > 0:
+    vertice = cola.dequeue()
+    print(str(vertice) + " ", end="")
+    for i in range(grafo.V):
+      temp = grafo.grafo[i]
+      visitado.add(i)
+      
+      while temp:
+        if temp.vertice not in visitado:
+          visitado.add(temp.vertice)
+          cola.enqueue(temp.vertice)
+        temp = temp.siguiente
+```
+
 ## Referencias
+
+* BFS Graph Algorithm(With code in C, C++, Java and Python). (2020). Programiz. https://www.programiz.com/dsa/graph-bfs
+* 7.9. Implementación de la búsqueda en anchura — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/Graphs/ImplementacionDeLaBusquedaEnAnchura.html
