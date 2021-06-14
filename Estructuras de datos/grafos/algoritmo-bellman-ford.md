@@ -26,7 +26,7 @@ Al hacer esto repetidamente para todos los vértices, podemos garantizar que el 
 * Complejidad en el tiempo es de O(VE), donde V es el número de vertices y E el número de aristas
 * Complejidad de espacio es O(V)
 
-## Implementación del algoritmo de búsqueda por anchura en python
+## Implementación del Algoritmo de Bellman Ford en python
 
 ```python
 class Grafo:
