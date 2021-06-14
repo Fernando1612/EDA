@@ -25,4 +25,24 @@ El algoritmo DFS funciona como sigue:
 
 ## Implementación del algoritmo de búsqueda por profundidad en python
 
+```pyhton
+def dfs(grafo, inicio, visitado = None, pila = None):
+  if pila is None:
+    pila = Pila()
+  if visitado is None:
+    visitado = set()
+  pila.push(inicio)
+  vertice = pila.pop()
+  print(str(vertice) + " ", end="")
+  visitado.add(inicio)
+  temp = grafo.grafo[inicio]
+  while temp:
+    if temp.vertice not in visitado:
+      dfs(grafo,temp.vertice,visitado,pila)
+    temp = temp.siguiente
+```
+
 ## Referencias
+
+* Depth First Search (DFS) Algorithm. (2020). Programiz. https://www.programiz.com/dsa/graph-dfs
+* 7.15. Búsqueda en profundidad general — Solución de problemas con algoritmos y estructuras de datos. (2020). runestone. https://runestone.academy/runestone/static/pythoned/Graphs/BusquedaEnProfundidadGeneral.html
