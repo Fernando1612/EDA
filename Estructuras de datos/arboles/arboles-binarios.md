@@ -1,4 +1,4 @@
-# Árboles binarios (Binary tree)
+# Arboles binarios (Binary tree)
 
 Un **árbol binario** es una estructura de datos de árbol en la que cada nodo padre puede tener como máximo dos hijos.
 
