@@ -1,4 +1,4 @@
-# Árbol B (B-tree)
+# Arbol B (B-tree)
 
 El **árbol b** es un tipo especial de árbol de búsqueda autoequilibrado en el que cada nodo puede contener más de una clave y puede tener más de dos hijos. Es una forma generalizada del árbol de búsqueda binaria .
 
