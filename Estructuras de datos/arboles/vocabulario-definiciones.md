@@ -1,4 +1,4 @@
-# Árboles
+# Arboles
 
 Un **árbol** es una estructura de datos jerárquica no lineal que consta de nodos conectados por aristas.
 
