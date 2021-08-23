@@ -1,4 +1,4 @@
-# Árbol AVL (AVL tree)
+# Arbol AVL (AVL tree)
 
 El **árbol AVL** es un árbol de búsqueda binario autoequilibrado en el que cada nodo mantiene un factor de equilibrio de **-1, 0 o +1**.
 
