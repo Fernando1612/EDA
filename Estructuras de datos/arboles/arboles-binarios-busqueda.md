@@ -1,4 +1,4 @@
-# Árboles binarios de búsqueda (Binary search tree)
+# Arboles binarios de búsqueda (Binary search tree)
 
 El **árbol de búsqueda binaria** (BST) es una estructura de datos que rápidamente nos permite mantener una lista ordenada de números.
 
