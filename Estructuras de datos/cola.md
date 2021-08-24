@@ -1,6 +1,6 @@
 # Cola (Queue)
 
-Una **Cola** es una colección ordenada de datos donde la adición de nuevos datos tiene lugar en uno de los extremos, denominado “final”, y la eliminación de datos existentes ocurre en el otro extremo, comúnmente llamado “frente”. Un elemento ingresa a la cola por el final y espera hasta el momento que un dato sea eliminado para avanzar hacia el frente.
+Una **Cola** es una colección ordenada de datos donde la adición de nuevos datos tiene lugar en uno de los extremos, denominado "final", y la eliminación de datos existentes ocurre en el otro extremo, comúnmente llamado “frente”. Un elemento ingresa a la cola por el final y espera hasta el momento que un dato sea eliminado para avanzar hacia el frente.
 El dato más recientemente agregado en la cola debe esperar al final de la colección. El dato que ha permanecido más tiempo en la colección está en el frente. Este principio de ordenamiento se denomina **FIFO (first-in first-out)**, también conocido como el primero en entrar es el primero en ser salir.
 En términos de programación, poner elementos en la cola se llama enqueue y eliminar elementos de la cola se llama dequeue.
 
