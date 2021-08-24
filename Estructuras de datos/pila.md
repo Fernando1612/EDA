@@ -1,7 +1,7 @@
 # Pila (Stack)
 
-Una **pila** es una colección ordenada de datos en la cual los datos se pueden agregar y eliminar en el extremo llamado “tope”.
-Este principio de ordenamiento se denomina **LIFO**: último en entrar, primero en salir (**last-in, first-out**). Éste brinda un ordenamiento basado en el tiempo de permanencia en la colección. 
+Una **pila** es una colección ordenada de datos en la cual los datos se pueden agregar y eliminar en el extremo llamado "tope".
+Este principio de ordenamiento se denomina **LIFO**: último en entrar, primero en salir (**last-in, first-out**). Este brinda un ordenamiento basado en el tiempo de permanencia en la colección. 
 Los datos más nuevos están cerca al tope y los más viejos están más cerca de la base.
 En términos de programación, poner un elemento en la parte superior de la pila se llama push y quitar un elemento se llama pop.
 
